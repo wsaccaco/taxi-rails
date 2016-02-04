@@ -66,3 +66,5 @@ gem 'devise-bootstrap-views'
 # Admin Section Support
 
 gem 'rails_admin'
+
+gem 'annotate'
