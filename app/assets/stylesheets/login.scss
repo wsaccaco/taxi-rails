@@ -1,45 +1,6 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-<<<<<<< HEAD
-header, footer {
-    background-color: #282828;
-    position: fixed;
-    padding: 20px 0;
-    box-sizing: border-box;
-    color: #c3c1c1;
-    width: 100%;
-}
-
-.layout_a {
-    color: #c3c1c1;
-}
-
-header {
-    top: 0;
-}
-
-footer {
-    bottom: 0;
-}
-header img {
-    width: 250px;
-    display: block;
-}
-
-img {
-    width: 100%
-}
-
-.same-height {
-    max-height: 154px;
-    overflow: hidden;
-}
-
-.float {
-    display: inline;
-    max-width: 15%;
-=======
 .form-module {
   position: relative;
   background: #ffffff;
@@ -116,7 +77,7 @@ img {
   background: #F6FCD0;
   color: #333333;
 }
-.form-module button {
+.form-module input[type=submit] {
   cursor: pointer;
   background: #E6C533;
   width: 100%;
@@ -126,7 +87,7 @@ img {
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
-.form-module button:hover {
+.form-module input[type=submit]:hover {
   background: #A38913;
 }
 .form-module .cta {
@@ -141,5 +102,4 @@ img {
 .form-module .cta a {
   color: #333333;
   text-decoration: none;
->>>>>>> 200b2e1ad532ba1ee94de25b5903840d7a32c7a9
 }

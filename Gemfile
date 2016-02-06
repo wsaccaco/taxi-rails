@@ -52,3 +52,19 @@ gem 'therubyracer'
 gem 'less-rails'
 
 gem 'twitter-bootstrap-rails'
+
+# Simplified Form Management
+
+gem 'simple_form'
+
+# Authentication Support
+
+gem 'devise'
+
+gem 'devise-bootstrap-views'
+
+# Admin Section Support
+
+gem 'rails_admin'
+
+gem 'annotate'

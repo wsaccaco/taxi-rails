@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
+  resources :profiles
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :users
   get 'pages/index'
 
   get 'pages/login'
   
+<<<<<<< HEAD
   root 'pages#login'
+=======
+  root 'pages#index'
+>>>>>>> 200b2e1ad532ba1ee94de25b5903840d7a32c7a9
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
