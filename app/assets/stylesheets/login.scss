@@ -77,7 +77,7 @@
   background: #F6FCD0;
   color: #333333;
 }
-.form-module button {
+.form-module input[type=submit] {
   cursor: pointer;
   background: #E6C533;
   width: 100%;
@@ -87,7 +87,7 @@
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
-.form-module button:hover {
+.form-module input[type=submit]:hover {
   background: #A38913;
 }
 .form-module .cta {

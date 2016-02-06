@@ -1,9 +1,5 @@
-<%= render 'layouts/header' %>
 
 <section class="home full-height">
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
     <div class="container">
         <div class="row ">
@@ -12,14 +8,21 @@
                     <i class="fa fa-times fa-pencil"></i>
                 <div class="tooltip">Registrate</div>
             </div>
+            
             <div class="form">
-                <h2>INICIAR SESIÓN</h2>
-                <form>
-                    <input type="text" placeholder="Usuario"/>
-                    <input type="password" placeholder="Contraseña"/>
-                    <button>Login</button>
-                </form>
+              <h2>INICIAR SESIÓN</h2>
+              <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), :html=> { class: 'test' }) do |f| %>
+                
+                  <%= f.input :email,  placeholder: 'Usuario', required: false, autofocus: true, label: false %>
+                  <%= f.input :password, placeholder: 'Contraseña',  required: false, label: false %>
+                  <%# f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+                  <%= f.button :submit, "Login" %>
+                
+              <% end %>
+              
             </div>
+            
             <div class="form">
                 <h2>Crear Cuenta</h2>
                 <form>
@@ -36,4 +39,5 @@
 </section>
 
 
-<%= render 'layouts/footer' %>
+
+<%# render "devise/shared/links" %>
