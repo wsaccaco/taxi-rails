@@ -1,0 +1,23 @@
+html{
+    height : 100%;    
+}
+
+body{
+    height : 100%;
+}
+
+#footer{
+    background-color : #33A4DF;
+    padding: 20px 0;
+    color: #FFF;
+    bottom: 0;
+    width: 100%;
+    position: absolute;    
+}
+
+section.home {
+    padding : 100px 0;
+    height : 600px;
+    background-image : image-url('taxi_background.jpg');
+    background-size : cover;
+}
