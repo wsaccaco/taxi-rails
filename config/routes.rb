@@ -6,11 +6,7 @@ Rails.application.routes.draw do
 
   get 'pages/login'
   
-<<<<<<< HEAD
-  root 'pages#login'
-=======
   root 'pages#index'
->>>>>>> 200b2e1ad532ba1ee94de25b5903840d7a32c7a9
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
