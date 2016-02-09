@@ -21,3 +21,34 @@ section.home {
     background-image : image-url('taxi_background.jpg');
     background-size : cover;
 }
+
+/*stilos header*/
+
+.backhead{
+	background-color: #93D7EC;
+    border-bottom:  solid 1.5px #333;
+
+}
+
+li.backli:hover{
+	background-color: #72C5DE;
+    padding-top: 10px;
+    padding-bottom:10px; 
+	
+}
+
+
+.icono{
+	height:70px;
+	width: 150px;
+	 background-image : image-url('logooo.png');
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-origin: content-box; 
+	margin: 5px 5px;
+}
+
+
+
+
+/*stilos header*/
