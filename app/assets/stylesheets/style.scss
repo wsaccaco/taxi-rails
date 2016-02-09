@@ -23,44 +23,62 @@ section.home {
 }
 
 /*stilos header*/
-
-.backhead{
-	background-color: #93D7EC;
-    border-bottom:  solid 1.5px #333;
-
-}
-
-li.backli:hover{
-	background-color: #72C5DE;
-    padding-top: 10px;
-    padding-bottom:10px; 
-	
-}
-
-
 .icono{
-	height:70px;
-	width: 150px;
-	 background-image : image-url('logooo.png');
-	background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-origin: content-box; 
-	margin: 5px 5px;
+	height:50px;
+	width: 200px;
+	padding-right: 40px;
 }
 
 
-
-
-/*stilos header*/
+div.menu{/*alinea los items del header*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #map { height: 400px; }
 
 #header{
     background-color : #33A4DF;
-    padding: 20px 0;
+    padding: 10px 0;
     color: #FFF;
+    height: 100px;
 }
 
 div.main{
     padding: 25px 0;
+}
+/*stilos header*/
+
+
+
+/*=======================================================*/
+
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+nav {
+  margin-top: 0px;
+  padding: 15px;
+  text-align: center;
+  font-family: Raleway;
+  
+}
+#nav-1 {
+  background: none;
+}
+
+.link-1 {
+  transition: 0.3s ease;
+  background: none;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+ 
+  padding: 10px 0;
+  margin: 0 20px;
+}
+.link-1:hover {
+  border-top: 4px solid #ffffff;
+  border-bottom: 4px solid #ffffff;
+  padding: 6px 0; 
 }
