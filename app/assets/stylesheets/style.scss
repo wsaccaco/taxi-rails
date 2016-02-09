@@ -22,7 +22,6 @@ section.home {
     background-size : cover;
 }
 
-<<<<<<< HEAD
 /*stilos header*/
 
 .backhead{
@@ -53,6 +52,15 @@ li.backli:hover{
 
 
 /*stilos header*/
-=======
+
 #map { height: 400px; }
->>>>>>> 06644195a0bd0d2cbf428332a13a833f1512899e
+
+#header{
+    background-color : #33A4DF;
+    padding: 20px 0;
+    color: #FFF;
+}
+
+div.main{
+    padding: 25px 0;
+}
