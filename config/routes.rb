@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get 'pages/login'
   
+  get 'pages/atencion'
+  
   root 'pages#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
