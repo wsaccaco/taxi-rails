@@ -20,11 +20,13 @@
                   <%= f.button :submit, "Login" %>
                 
               <% end %>
+                 <%= render "devise/shared/links" %>
               
             </div>
             
             <div class="form">
                 <h2>Crear Cuenta</h2>
+             
                 <form>
                     <input type="text" placeholder="Usuario"/>
                     <input type="password" placeholder="Contraseña"/>
@@ -40,4 +42,4 @@
 
 
 
-<%= render "devise/shared/links" %>
+

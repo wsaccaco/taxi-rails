@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'pages/login'
   
   get 'pages/atencion'
+   get 'pages/about'
   
   root 'pages#index'
 
