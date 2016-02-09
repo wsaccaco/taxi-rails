@@ -1,3 +1,5 @@
+
+
 html{
     height : 100%;    
 }
@@ -83,4 +85,51 @@ nav {
   border-top: 4px solid #ffffff;
   border-bottom: 4px solid #ffffff;
   padding: 6px 0; 
+}
+
+/*div login*/
+
+#ding{//flexbox div contenedor
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    align-items:center;
+}
+
+#divtexto{//div texto
+    
+    width:600px;
+    height: 350px;
+    padding-left:200px;
+    padding-top: 60px;
+}
+
+
+#plogin1{ //parrafo login
+    font-weight:normal;
+    color:#B7E8E2;
+    letter-spacing:1pt;
+    word-spacing:4pt;
+    font-size:35px;
+    text-align:left;
+    font-family: times, Times New Roman, times-roman, georgia, serif;
+    line-height:1;
+    
+}
+
+#plogin2{//parrafo login
+    font-weight:normal;
+    font-style:italic;
+    color:#fff;
+    letter-spacing:1pt;
+    word-spacing:4pt;
+    font-size:25px;
+    text-align:left;
+    font-family: times, Times New Roman, times-roman, georgia, serif;
+    line-height:1;
+    padding-top: 10px;
 }

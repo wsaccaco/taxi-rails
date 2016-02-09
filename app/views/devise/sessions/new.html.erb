@@ -1,39 +1,45 @@
 
 <section class="home full-height">
-
-    <div class="container">
-        <div class="row ">
+    
+    <div  class="container">
+        <div id="ding" class="row ">
+            <div id="divtexto">
+                <p id="plogin1">Bienvenido a  la forma más sencilla de viajar con solo presionar un boton</p>
+                <p id="plogin2">Ingresa y empieza a vivir una nueva experiencia</p>
+            </div>
+            
             <div class="module form-module">
-                <div class="toggle">
-                    <i class="fa fa-times fa-pencil"></i>
-                <div class="tooltip">Registrate</div>
-            </div>
-            
-            <div class="form">
-              <h2>Iniciar Sesión</h2>
-              <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), :html=> { class: 'test' }) do |f| %>
+                    <div class="toggle">
+                        <i class="fa fa-times fa-pencil"></i>
+                    <div class="tooltip">Registrate</div>
+                </div>
                 
-                  <%= f.input :email,  placeholder: 'Usuario', required: false, autofocus: true, label: false %>
-                  <%= f.input :password, placeholder: 'Contraseña',  required: false, label: false %>
-                  <%# f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-
-                  <%= f.button :submit, "Login" %>
+                <div class="form">
+                  <h2>Iniciar Sesión</h2>
+                  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), :html=> { class: 'test' }) do |f| %>
+                    
+                      <%= f.input :email,  placeholder: 'Usuario', required: false, autofocus: true, label: false %>
+                      <%= f.input :password, placeholder: 'Contraseña',  required: false, label: false %>
+                      <%# f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    
+                      <%= f.button :submit, "Login" %>
+                    
+                  <% end %>
+                     <%= render "devise/shared/links" %>
+                  
+                </div>
                 
-              <% end %>
-                 <%= render "devise/shared/links" %>
-              
-            </div>
-            
-            <div class="form">
-                <h2>Crear Cuenta</h2>
-             
-                <form>
-                    <input type="text" placeholder="Usuario"/>
-                    <input type="password" placeholder="Contraseña"/>
-                    <input type="email" placeholder="Correo electronico"/>
-                    <input type="tel" placeholder="Celular"/>
-                    <input type="submit" value="Registrar">
-                </form>
+                <div class="form">
+                    <h2>Crear Cuenta</h2>
+                 
+                    <form>
+                        <input type="text" placeholder="Usuario"/>
+                        <input type="password" placeholder="Contraseña"/>
+                        <input type="email" placeholder="Correo electronico"/>
+                        <input type="tel" placeholder="Celular"/>
+                        <input type="submit" value="Registrar">
+                    </form>
+                </div>
             </div>
         </div>
     </div>
