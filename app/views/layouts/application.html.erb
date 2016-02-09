@@ -8,11 +8,14 @@
 </head>
   <body> 
   
-    <%= bootstrap_flash %>
+    
 
     <%= render 'layouts/header' %>
+    <%= bootstrap_flash %>
+    <div class="main">
+      <%= yield %>
+    </div>
     
-    <%= yield %>
     
     <%= render 'layouts/footer' %>
     
