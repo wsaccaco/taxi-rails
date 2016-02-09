@@ -68,3 +68,5 @@ gem 'devise-bootstrap-views'
 gem 'rails_admin'
 
 gem 'annotate'
+
+gem "font-awesome-rails"
