@@ -119,3 +119,17 @@ nav {
     line-height:1;
     padding-top: 10px;
 }
+
+.navbar-top-links li {
+    display: inline-block;
+}
+
+.navbar-top-links li.dropdown a.headerlink {
+    color : #FFF;
+    font-size : 20px;
+}
+
+.navbar-top-links li.dropdown a.headerlink:hover {
+    color : #000;
+    font-size : 20px;
+}
