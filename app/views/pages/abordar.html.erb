@@ -1,0 +1,61 @@
+<div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-header">
+                    <h1>Abordando<small> Taxi</small></h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div id="map"></div>
+                <h3><i class="fa fa-clock-o fa-fw"></i> 00:00:52 <small>Tiempo de viaje</small></h3>
+                <h3><i class="fa fa-money fa-fw"></i> S/. 5.00 <small>Pasaje</small></h3>
+            </div>
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading"> Detalles del Taxista</div>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td> <strong>Foto</strong> </td>
+                            <td>
+                                <%= image_tag("fotos/taxi_jorge.jpg", :width => "120px", :class => "img-responsive") %>
+                        
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <strong>Chofer</strong> </td>
+                            <td>Alonso Rojas</td>
+                        </tr>
+                        <tr>
+                            <td> <strong>Taxi</strong> </td>
+                            <td>Toyota Rojo</td>
+                        </tr>
+                        <tr>
+                            <td> <strong>Placa</strong> </td>
+                            <td>PNP-23224</td>
+                        </tr>
+                        <tr>
+                            <td> <strong>Celular</strong> </td>
+                            <td>947461996</td>
+                        </tr>
+                        <tr>
+                            <td> <strong>Distancia</strong> </td>
+                            <td>0.2 Km</td>
+                        </tr>
+
+                    </table>
+                    <div class="panel-footer">
+                        <button type="button" class="btn btn-primary btn-block">
+                            <i class="fa fa-thumbs-up"></i> Abordar
+                        </button>
+                        <button type="submit" class="btn btn-danger btn-block">
+                            <i class="fa fa-times fa-fw"></i> Cancelar
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

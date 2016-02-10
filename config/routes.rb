@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   
   get 'pages/atender'
   
+  get 'pages/abordar'
+  
    get 'pages/about'
     get 'pages/contact'
   
