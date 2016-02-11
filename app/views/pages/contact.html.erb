@@ -1,7 +1,4 @@
 
-<%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-link" %>
-
-
 <div class="container">
     <div class="row">
         <div class="center-block col-sm-12 ">
@@ -23,7 +20,7 @@
             
         </div>
         <div class=" center-block col-sm-12 ">
-            <div id="map" class="divabout"></div>
+            <%= render "map" %>
         </div>
         
         <div class="center-block col-sm-12">
