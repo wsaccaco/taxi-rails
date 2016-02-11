@@ -4,18 +4,18 @@ Rails.application.routes.draw do
   devise_for :users
   get 'pages/index'
 
+
   get 'pages/login'
   
+  # TAXISTA
   get 'pages/atencion'
-  
   get 'pages/atender'
   
   get 'pages/abordar'
-  
-   get 'pages/about'
-    get 'pages/contact'
-  
   root 'pages#index'
+  
+  get 'pages/about'
+  get 'pages/contact'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
