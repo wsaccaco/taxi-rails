@@ -71,5 +71,3 @@ gem 'rails_admin'
 gem 'annotate'
 
 gem "font-awesome-rails"
-
-gem 'leaflet-rails'

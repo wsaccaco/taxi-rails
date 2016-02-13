@@ -17,9 +17,16 @@
                 <div class="form-group">
                     <label for="point_start"> <span class="fa fa-map-marker fa-fw"></span> Punto de Inicio</label>
                     <div class="input-group">
-                        <input type="email" class="form-control" id="point_start" placeholder="Punto de inicio">
+                        
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="search_geo_start" 
+                            name="search_geo_start" 
+                            placeholder="Punto de inicio">
+                            
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
+                            <button class="btn btn-default" onclick="tMaps.geolocation()" type="button">
                                 <i class="fa fa-globe fa-fw"></i>
                             </button>
                         </span>
