@@ -7,9 +7,8 @@ $(document).on('ready page:load', function () {
       lat: -12.043333,
       lng: -77.028333,
       click : function( e ){
-    
-e.latLng.G
-        e.latLng.K
+          marker.setPosition(e.latLng)
+          $("input[name=search_geo_end]").val(e.latLng.lat() + ", " + e.latLng.lng());
       }
     });
     
@@ -24,7 +23,7 @@ e.latLng.G
         geolocation : function(){
             GMaps.geolocate({
               success: function(position) {
-                $("input[name=search_geo_start]").val(position.coords.latitude +","+ position.coords.longitude);
+                $("input[name=search_geo_start]").val(position.coords.latitude +", "+ position.coords.longitude);
                 map.addMarker({
                   lat: position.coords.latitude,
                   lng: position.coords.longitude,

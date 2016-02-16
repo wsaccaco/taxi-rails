@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160211031128) do
+ActiveRecord::Schema.define(version: 20160216032235) do
+
+  create_table "drivers", force: :cascade do |t|
+    t.string   "driv_plate"
+    t.string   "driv_trademark"
+    t.string   "driv_colour"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "user_id"
+  end
+
+  add_index "drivers", ["user_id"], name: "index_drivers_on_user_id"
 
   create_table "profiles", force: :cascade do |t|
     t.string   "first_name"
@@ -23,6 +34,34 @@ ActiveRecord::Schema.define(version: 20160211031128) do
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
+
+  create_table "search_taxis", force: :cascade do |t|
+    t.datetime "search_datetime"
+    t.string   "search_geo_start"
+    t.string   "search_geo_end"
+    t.text     "search_referencia"
+    t.string   "search_status"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "user_id"
+  end
+
+  add_index "search_taxis", ["user_id"], name: "index_search_taxis_on_user_id"
+
+  create_table "services", force: :cascade do |t|
+    t.datetime "serv_datetime_start"
+    t.string   "serv_waypoint"
+    t.float    "serv_precio"
+    t.datetime "serv_time"
+    t.string   "serv_status"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "driver_id"
+    t.integer  "search_taxi_id"
+  end
+
+  add_index "services", ["driver_id"], name: "index_services_on_driver_id"
+  add_index "services", ["search_taxi_id"], name: "index_services_on_search_taxi_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
