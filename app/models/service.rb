@@ -15,8 +15,24 @@
 #
 
 class Service < ActiveRecord::Base
+  belongs_to :search_taxi
+  belongs_to :driver
+
   before_save :default_values
+  after_save :accept_race
+
   def default_values
     self.serv_status ||= 'ACEPTADO'
+  end
+
+  def accept_race
+
+    if self.serv_status == 'ACEPTADO'
+
+      @searchtaxi = SearchTaxi.find( self.search_taxi_id )
+      @searchtaxi.search_status = 'ACEPTADO'
+      @searchtaxi.save
+
+    end
   end
 end

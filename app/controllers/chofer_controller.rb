@@ -9,7 +9,7 @@ class ChoferController < ApplicationController
       if  @service.length > 0
         format.json { render :json => { :model => @service[0], :status => 'carrera' }, status: 200 }
       else
-        @searchTaxi = SearchTaxi.where("search_datetime >= ? and search_status = ?", DateTime.now - 60000.second, 'BUSCANDO' )
+        @searchTaxi = SearchTaxi.where("search_datetime >= ? and search_status = ?", DateTime.now - 60.second, 'BUSCANDO' )
         format.json { render :json => { :model => @searchTaxi, :status => 'success' }, status: 200 }
       end
 
@@ -27,6 +27,21 @@ class ChoferController < ApplicationController
         format.json { render :json => @service.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def getChofer
+
+    @service = Service.find( params[:id] )
+    @search_taxi = @service.search_taxi
+    @profile = @search_taxi.user.profile
+    respond_to do |format|
+      format.json { render :json => { :search_taxi => @search_taxi, :client => @profile, :status => 'success' }, status: 200 }
+    end
+
+  end
+
+  def atender
+    @service_id = params[:id]
   end
 
   private

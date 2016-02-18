@@ -6,19 +6,10 @@ class PasajeroController < ApplicationController
 
 =begin
     respond_to do |format|
-      format.json{ render :json => { :users => current_user.id }}
-    end
-=end
-
-
-=begin
-    respond_to do |format|
       msg = { :status => "ok", :message => "Success!", :html => "<b>...</b>" }
       format.json  { render :json => msg } # don't do msg.to_json
     end
 =end
-
-
 
     respond_to do |format|
       if @search_taxi.save
@@ -29,7 +20,19 @@ class PasajeroController < ApplicationController
     end
   end
 
+  def getPasajero
 
+      @service = Service.find( params[:id] )
+      @search_taxi = @service.search_taxi
+      @profile = @search_taxi.user.profile
+      respond_to do |format|
+        format.json { render :json => { :search_taxi => @search_taxi, :client => @profile, :status => 'success' }, status: 200 }
+      end
+  end
+
+  def abordar
+    @service_id = params[:id]
+  end
 
   private
 

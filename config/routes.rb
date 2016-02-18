@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   get 'chofer/atencion'
   get 'chofer/search_race',  :defaults => { :format => 'json' }
   get 'chofer/accept_race'
-
+  get 'chofer/getChofer' ,  :defaults => { :format => 'json' }
   get 'chofer/atender/:id', to: 'chofer#atender'
   
-  get 'pages/abordar'
+
   root 'pasajero#index'
   
   get 'pages/about'
@@ -20,7 +20,8 @@ Rails.application.routes.draw do
 
 
   post 'pasajero/buscar_taxi'
-
+  get 'pasajero/getPasajero' ,  :defaults => { :format => 'json' }
+  get 'pasajero/abordar/:id', to: 'pasajero#abordar'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

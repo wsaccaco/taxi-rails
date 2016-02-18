@@ -11,50 +11,57 @@
                 <h3><i class="fa fa-money fa-fw"></i> S/. 5.00 <small>Pasaje</small></h3>
         </div>
         <div class="col-sm-6">
-            <div class="panel panel-default">
-                <!-- Default panel contents -->
-                <div class="panel-heading">Av. Benavides 404</div>
-                <table class="table table-bordered">
-                    <tr>
-                        <td> <strong>Foto</strong> </td>
-                        <td>
-                            <%= image_tag("fotos/Foto_Stefan.jpg", :width => "120px") %>
-                             
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> <strong>Pasajero</strong> </td>
-                        <td>Jorge Ramos</td>
-                    </tr>
-                    <tr>
-                        <td> <strong>Celular</strong> </td>
-                        <td>947461996</td>
-                    </tr>
-                    <tr>
-                        <td style="width: 100px"> <strong>Referencia</strong> </td>
-                        <td>Tottus</td>
-                    </tr>
-                    <tr>
-                        <td> <strong>Tiempo</strong> </td>
-                        <td>4m Aprx</td>
-                    </tr>
-                    <tr>
-                        <td> <strong>Distancia</strong> </td>
-                        <td>0.2 Km</td>
-                    </tr>
-                    <tr>
-                        <td> <strong>Destino</strong> </td>
-                        <td>Carretera central km 2</td>
-                    </tr>
-
-                </table>
-                <div class="panel-footer">
-                    
-                    <button type="submit" class="btn btn-primary btn-block"> <i class="fa fa-hourglass-end fa-fw"></i> Carrera Completada</button>
-                    <button type="submit" class="btn btn-danger btn-block"> <i class="fa fa-times fa-fw"></i> Cancelar</button>
-
-                </div>
-            </div>
+          <div id="chofer_atender"></div>
         </div>
     </div>
 </div>
+
+<input type="hidden" name="service_id" id="service_id" value="<%= @service_id %>">
+
+<script id="template" type="text/html">
+
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Av. Benavides 404</div>
+    <table class="table table-bordered">
+      <tr>
+        <td> <strong>Foto</strong> </td>
+        <td>
+          <%= image_tag("fotos/Foto_Stefan.jpg", :width => "120px") %>
+
+        </td>
+      </tr>
+      <tr>
+        <td> <strong>Pasajero</strong> </td>
+        <td> {{client.last_name}} , {{client.first_name}} </td>
+      </tr>
+      <tr>
+        <td> <strong>Celular</strong> </td>
+        <td>947461996</td>
+      </tr>
+      <tr>
+        <td style="width: 100px"> <strong>Referencia</strong> </td>
+        <td>{{search_taxi.search_geo_end}}</td>
+      </tr>
+      <tr>
+        <td> <strong>Tiempo</strong> </td>
+        <td>4m Aprx</td>
+      </tr>
+      <tr>
+        <td> <strong>Distancia</strong> </td>
+        <td>0.2 Km</td>
+      </tr>
+      <tr>
+        <td> <strong>Destino</strong> </td>
+        <td>{{search_taxi.search_geo_end}}</td>
+      </tr>
+
+    </table>
+    <div class="panel-footer">
+
+      <button type="submit" class="btn btn-primary btn-block"> <i class="fa fa-hourglass-end fa-fw"></i> Carrera Completada</button>
+      <button type="submit" class="btn btn-danger btn-block"> <i class="fa fa-times fa-fw"></i> Cancelar</button>
+
+    </div>
+  </div>
+</script>

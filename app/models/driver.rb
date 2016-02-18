@@ -12,4 +12,5 @@
 #
 
 class Driver < ActiveRecord::Base
+  has_many :services
 end
