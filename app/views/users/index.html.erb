@@ -1,0 +1,21 @@
+
+
+<table>
+    <tr>
+        <% @user.each do |usuario| %>
+        <tr>
+            <td><%= link_to usuario.email %></td>
+            <td><%= link_to usuario.encrypted_password %></td>
+            
+        </tr>
+        <% end %>
+        <% if @user.size==0 %>
+            no existen usuarios 
+        <% end %>
+    </tr>
+    
+</table>
+
+
+<%= link_to "Nuevo Usuario", new_user_path %>
+<%= link_to "Registrar", '/signup'  %>
