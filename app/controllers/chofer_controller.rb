@@ -1,4 +1,14 @@
 class ChoferController < ApplicationController
+  before_action :authenticate_user!
+
+  before_action :redirect, :except =>  [:getChofer]
+
+  def redirect
+    @profile = Profile.find_by(user_id: current_user.id)
+    if @profile.profile_type == 'CLIENTE'
+      redirect_to root_path
+    end
+  end
 
   def search_race
     @driver = Driver.find_by(user_id: current_user.id)
@@ -32,10 +42,14 @@ class ChoferController < ApplicationController
   def getChofer
 
     @service = Service.find( params[:id] )
-    @search_taxi = @service.search_taxi
-    @profile = @search_taxi.user.profile
+    @driver = @service.driver
+    @profile = @driver.user.profile
     respond_to do |format|
-      format.json { render :json => { :search_taxi => @search_taxi, :client => @profile, :status => 'success' }, status: 200 }
+      format.json { render :json => {
+          :driver => @driver,
+          :chofer => @profile,
+          :service => @service,
+          :status => 'success' }, status: 200 }
     end
 
   end

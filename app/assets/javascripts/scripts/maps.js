@@ -23,14 +23,19 @@ $(document).on('ready page:load', function () {
         geolocation : function(){
             GMaps.geolocate({
               success: function(position) {
-                $("input[name=search_geo_start]").val(position.coords.latitude +", "+ position.coords.longitude);
+                  if ($("input[name=search_geo_start]").length != 0) {
+                      $("input[name=search_geo_start]").val(position.coords.latitude +", "+ position.coords.longitude);
+                  }
+
                 map.addMarker({
                   lat: position.coords.latitude,
                   lng: position.coords.longitude,
                   icon : "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
                   draggable:true
                 });
+
                 map.setCenter(position.coords.latitude, position.coords.longitude);
+
               },
               error: function(error) {
                 alert('Geolocation failed: '+error.message);

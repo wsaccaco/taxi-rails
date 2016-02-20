@@ -3,7 +3,6 @@
     
     <div  class="container">
         
-        
             <div class="row ">
                 <div class='background-login'>
                     <div class="col-sm-6">
@@ -27,18 +26,8 @@
                               <h2>Iniciar Sesión</h2>
                               <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), :html=> { class: 'test' }) do |f| %>
                                 
-                                  <%= f.input :email,  placeholder: 'Usuario', required: false, autofocus: true, label: false %>
+                                  <%= f.input :email, placeholder: 'Usuario', required: false, autofocus: true, label: false %>
                                   <%= f.input :password, placeholder: 'Contraseña',  required: false, label: false %>
-                                  <%# f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-                                  <div class="form-horizontal">
-                                  <div class="form-group">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> Conductor
-                                        </label>
-                                    </div>
-                                  </div>    
-                                  </div>
                                   
                                   
                                   <%= f.button :submit, "Login" %>
@@ -49,15 +38,20 @@
                             </div>
                             
                             <div class="form">
-                                <h2>Crear Cuenta</h2>
-                             
-                                <form>
-                                    <input type="text" placeholder="Usuario"/>
-                                    <input type="password" placeholder="Contraseña"/>
-                                    <input type="email" placeholder="Correo electronico"/>
-                                    <input type="tel" placeholder="Celular"/>
-                                    <input type="submit" value="Registrar">
-                                </form>
+                              <h2>Crear Cuenta</h2>
+                              <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                                <%= f.error_notification %>
+
+                                <div class="form-inputs">
+                                  <%= f.input :email, placeholder: 'Correo Electronico', required: true, autofocus: true, label: false %>
+                                  <%= f.input :password, placeholder: 'Contraseña', required: true, label: false, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+                                  <%= f.input :password_confirmation, placeholder: 'Confirma Contraseña', required: true, label: false %>
+                                </div>
+
+                                <div class="form-actions">
+                                  <%= f.button :submit, "Registrar" %>
+                                </div>
+                              <% end %>
                             </div>
                         </div> 
                     </div>

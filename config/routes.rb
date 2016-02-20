@@ -18,10 +18,17 @@ Rails.application.routes.draw do
   get 'pages/about'
   get 'pages/contact'
 
+  post 'service/loencontre'
+  get 'service/verifica'
 
   post 'pasajero/buscar_taxi'
   get 'pasajero/getPasajero' ,  :defaults => { :format => 'json' }
   get 'pasajero/abordar/:id', to: 'pasajero#abordar'
+  get 'pasajero/verifica'
+
+
+  post 'service/update',  :defaults => { :format => 'json' }
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

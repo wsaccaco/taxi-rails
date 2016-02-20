@@ -1,14 +1,32 @@
-<%= simple_form_for(@profile) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :born_at %>
-    <%= f.association :user %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="row">
+    <div class="col-sm-8">
+      <%= simple_form_for(@profile) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-group">
+            <label for="profile_first_name">Nombre</label>
+            <%= f.input :first_name, placeholder: 'Nombre', input_html: { class: 'form-control' }, id: 'first_name', required: false, autofocus: true, label: false%>
+          </div>
+
+          <div class="form-group">
+            <label for="profile_last_name">Apellidos</label>
+            <%= f.input :last_name, placeholder: 'Apellidos', input_html: { class: 'form-control' }, id: 'last_name', required: false, autofocus: true, label: false%>
+          </div>
+
+          <div class="form-group">
+            <label for="profile_last_name">Celular</label>
+            <%= f.input :celular, placeholder: {type: 'waldo'}, input_html: { class: 'form-control' }, id: 'last_name', required: true, autofocus: true, label: false%>
+          </div>
+
+          <div class="form-group">
+          <%= f.input :profile_type, input_html: {class: 'form-control'}, collection: ['CLIENTE', 'CHOFER'], label: false %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, 'Actualizar', class: 'btn-default'%>
+          </div>
+      <% end %>
+    </div>
   </div>
-<% end %>

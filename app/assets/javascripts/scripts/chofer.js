@@ -59,17 +59,55 @@ $(document).on('ready page:load', function () {
                     Mustache.parse(template);   // optional, speeds up future uses
                     var rendered = Mustache.render(template, response);
                     $("#chofer_atender").html( rendered );
+                    var pasajero = response.search_taxi.search_geo_start;
+                    var destino = response.search_taxi.search_geo_end;
+                    var coord_pasajero = pasajero.split(",");
+                    var coord_destino = destino.split(",");
+
+                    tMaps.geolocation();
+
+                    map.addMarker({
+                        lat: coord_pasajero[0],
+                        lng: coord_pasajero[1],
+                        icon : "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+                        draggable:true
+                    });
+                    map.addMarker({
+                        lat: coord_destino[0],
+                        lng: coord_destino[1],
+                        icon : "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+                        draggable:true
+                    });
+                    setInterval(function () {
+                        tService.verifica('chofer')
+                    }, 3000);
+
 
                 }
 
             });
 
+        },
+        completar : function () {
+
+            var params = {
+                id : $("#service_id").val(),
+                serv_status : 'TERMINADO'
+            };
+
+            $.post("/service/update", params, function ( response ) {
+
+                if (response.status == 'success') {
+                    window.location.reload();
+                }
+
+            });
         }
         
     };
 
 
     tChofer.getPasajero();
-    tChofer.searchRace();
+    var search_race = setInterval(tChofer.searchRace, 3000);
 
 });

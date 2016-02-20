@@ -13,7 +13,7 @@
             <%= render "layouts/map" %>
         </div>
         <div class="col-sm-6">
-            <form name="search_taxi">
+            <form name="search_taxi" id="pasajero_search_taxi" >
                 <div class="form-group">
                     <label for="point_start"> <span class="fa fa-map-marker fa-fw"></span> Punto de Inicio</label>
                     <div class="input-group">
@@ -60,7 +60,10 @@
                         </div>
                     </div>
                 </div>
-              <input type="hidden" name="user_id" value="<%= current_user.id %>">
+              <% if current_user %>
+                  <input type="hidden" name="user_id" value="<%= current_user.id %>">
+              <% end %>
+
             </form>
         </div>
     </div>

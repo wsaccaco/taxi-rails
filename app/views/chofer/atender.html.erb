@@ -7,8 +7,16 @@
     <div class="row">
         <div class="col-sm-6">
             <%= render "layouts/map" %>
-                <h3><i class="fa fa-clock-o fa-fw"></i> 00:00:52 <small>Tiempo de viaje</small></h3>
-                <h3><i class="fa fa-money fa-fw"></i> S/. 5.00 <small>Pasaje</small></h3>
+                <h3>
+                  <i class="fa fa-clock-o fa-fw"></i>
+                  <span class="viaje-timer">00:00:00</span>
+                  <small>Tiempo de viaje</small>
+                </h3>
+                <h3>
+                  <i class="fa fa-money fa-fw"></i>
+                  S/. <span class="viaje-precio">0.00</span>
+                  <small>Precio del Viaje</small>
+                </h3>
         </div>
         <div class="col-sm-6">
           <div id="chofer_atender"></div>
@@ -59,8 +67,19 @@
     </table>
     <div class="panel-footer">
 
-      <button type="submit" class="btn btn-primary btn-block"> <i class="fa fa-hourglass-end fa-fw"></i> Carrera Completada</button>
-      <button type="submit" class="btn btn-danger btn-block"> <i class="fa fa-times fa-fw"></i> Cancelar</button>
+      <div class="chofer_botones">
+        <button type="button" class="btn btn-primary btn-block btn-completar" style="display: none" onclick="tChofer.completar()">
+          <i class="fa fa-hourglass-end fa-fw"></i> Carrera Completada
+        </button>
+
+        <button type="button" class="btn btn-danger btn-block">
+          <i class="fa fa-times fa-fw"></i> Cancelar
+        </button>
+      </div>
+
+      <a href="/chofer/atencion" class="btn btn-default btn-block new_carre" style="display: none">
+        <i class="fa fa-refresh fa-fw"></i> Buscar otro carrera
+      </a>
 
     </div>
   </div>
