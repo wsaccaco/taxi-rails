@@ -5,6 +5,8 @@
       <%= simple_form_for(@profile) do |f| %>
           <%= f.error_notification %>
 
+          <%= image_tag @profile.avatar.url(:medium), class: "img-circle" %>
+
           <div class="form-group">
             <label for="profile_first_name">Nombre</label>
             <%= f.input :first_name, placeholder: 'Nombre', input_html: { class: 'form-control' }, id: 'first_name', required: false, autofocus: true, label: false%>
@@ -13,6 +15,10 @@
           <div class="form-group">
             <label for="profile_last_name">Apellidos</label>
             <%= f.input :last_name, placeholder: 'Apellidos', input_html: { class: 'form-control' }, id: 'last_name', required: false, autofocus: true, label: false%>
+          </div>
+
+          <div class="form-group">
+          <%= f.input :avatar, as: :file %>
           </div>
 
           <div class="form-group">
