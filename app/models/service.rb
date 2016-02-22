@@ -49,7 +49,7 @@ class Service < ActiveRecord::Base
 
     if self.serv_status == 'TERMINADO'
       self.serv_time = DateTime.now
-      self.serv_precio = ((self.serv_datetime_start - DateTime.now) * -1) /60
+      self.serv_precio = 5.00
       @searchtaxi = SearchTaxi.find( self.search_taxi_id )
       @searchtaxi.search_status = 'TERMINADO'
       @searchtaxi.save
