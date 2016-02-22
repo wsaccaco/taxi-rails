@@ -67,9 +67,7 @@ gem 'devise-bootstrap-views'
 # Admin Section Support
 
 gem 'rails_admin'
-
+gem 'paperclip'
 gem 'annotate'
 
 gem "font-awesome-rails"
-
-gem 'leaflet-rails'

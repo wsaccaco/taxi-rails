@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: drivers
+#
+#  id             :integer          not null, primary key
+#  driv_plate     :string
+#  driv_trademark :string
+#  driv_colour    :string
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  user_id        :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  driv_plate: MyString
+  driv_trademark: MyString
+  driv_colour: MyString
+
+two:
+  driv_plate: MyString
+  driv_trademark: MyString
+  driv_colour: MyString

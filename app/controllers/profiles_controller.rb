@@ -2,13 +2,21 @@
 #
 # Table name: profiles
 #
-#  id         :integer          not null, primary key
-#  first_name :string
-#  last_name  :string
-#  born_at    :datetime
-#  user_id    :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id                  :integer          not null, primary key
+#  first_name          :string
+#  last_name           :string
+#  born_at             :datetime
+#  user_id             :integer
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  celular             :string
+#  type                :string
+#  profie_type         :string
+#  profile_type        :string
+#  avatar_file_name    :string
+#  avatar_content_type :string
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
 #
 
 class ProfilesController < ApplicationController
@@ -55,8 +63,8 @@ class ProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @profile.update(profile_params)
-        format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
-        format.json { render :show, status: :ok, location: @profile }
+        format.html { render :edit, notice: 'Profile was successfully updated.' }
+        format.json { render :edit, status: :ok, location: @profile }
       else
         format.html { render :edit }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
@@ -82,6 +90,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:first_name, :last_name, :born_at, :user_id)
+      params.require(:profile).permit(:first_name, :last_name, :born_at, :user_id, :celular, :profile_type, :avatar)
     end
 end

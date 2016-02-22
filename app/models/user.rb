@@ -15,6 +15,8 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  role                   :integer
+#  user_type              :string
 #
 
 class User < ActiveRecord::Base
@@ -23,7 +25,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
-has_one :profile
+  has_one :profile
+  has_many :search_taxis
+  has_one :driver
 
   enum role: [:user, :operator, :chef, :admin]
   
